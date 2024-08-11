@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+.card-slider {
+  width: 100%;
+  max-width: 600px; /* Limit the width on larger screens */
+  overflow: hidden;
+  height: fit-content;
+  position: relative;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-slider-container {
+  display: flex;
+  height: fit-content;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.card {
+  width: 100%; /* Full width on mobile */
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  height: 120px;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 50%;
+}
+
+.card p {
+  width: 100%;
+  margin-top: 2px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .card {
+      min-width: 25%; /* Half width on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+      min-width: 25%; /* Third width on desktops */
+  }
+  .card img {
+    width: 50%;
+  }
+}
+body{
+  background-color: rgb(255, 255, 255);
+  /* display: flex; */
+  align-items: center;
+  /* font-family: sans-serif; */
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+.layout {
+  width: 100%;
+  display: flex;
+}
+.izquierdabody{
+  width: 100%;
+
+}
+.derechabody{
+  border: solid 2px rgb(23, 0, 128);
+  width: 40%;
+}
+.contenido-vertical-largo{
+  border: solid 2px yellow;
+  width: 100%;
+  height: 100%;
+  
+}
+.tituloizquierda{
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.izquierdabody a{
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+.contenido{
+  width: 100%;
+  border: solid 2px blue;
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.imgcontenido img{
+  width: 150px;
+  height:150px;
+  padding:5px ;
+}
+.textocontenido{
+  width: fit-content;
+  text-align: justify;
+  padding: 7px;
+}
+.textocontenido .title{
+  font-size: 20px;
+  padding: 0px;
+  text-align: left;
+  height: fit-content;
+  margin: 0;
+  font-weight: 900;
+}
+
+
+/*------------------------------------------------------ */
+
+
+/* Media Queries Breakpoints */
+#ultimo + div{
+  visibility: hidden;
+}
+@media(max-width:768px) {
+  .layout {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+  }
+  .derechabody{
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+@media(max-width:426px){
+  .contenido{
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .textocontenido{
+    width: fit-content;
+    padding: 15px;
+  }
+  .imgcontenido{
+    margin: auto;
+  }
+  .textocontenido .title{
+    font-size: 20px;
+    text-align: center;
+    padding: 0px;
+    height: fit-content;
+    margin: 0;
+  }
+}
+/*------------------------------------------------------ */
+

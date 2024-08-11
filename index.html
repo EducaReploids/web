@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://i.ibb.co/3zngVXX/logoApp.png">
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCAREPLOIDS</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style_slider.css">
+    <link rel="stylesheet" href="css/swiper-bundle-min.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-------HEADER-------->
+    <!--
+    <script>
+      function includeheader() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w2-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w2-include-html");
+                includeheader();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
+    -->
+    
+
+
+    <!--------FOOTER------->
+    <script>
+      function includefooter() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w1-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w1-include-html");
+                includefooter();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+
+  <!-----AQUI ESTA EL HEADER----->
+  <div style="width: 100%;" w2-include-html="header.html">
+  </div>
+
+  <script>
+        includeheader();
+  </script>
+  <!----------------------------->
+
+<!--AQUI VA EL CONTENIDO CENTRAL-->
+<div class="card-slider">
+  <div class="card-slider-container">
+      <div class="card"><a href=""><img src="img/sitio-web.png" alt="Diseño Web"><p>Diseño Web</p></a></div>
+      <div class="card"><a href=""><img src="img/archivo-excel.png" alt="Excel"><p>Gestion Excel</p></a></div>
+      <div class="card"><a href=""><img src="img/images.png" alt="Animate cc"><p>Animate CC</p></a></div>
+      <div class="card"><a href=""><img src="img/appcreator.png" alt="Image 3"><p>AppCreator 24</p></a></div>
+      <div class="card"><a href=""><img src="img/word.png" alt="Image 3"><p>Microsoft Word</p></a></div>
+      <div class="card"><a href=""><img src="img/obs.png" alt="Image 3"><p>OBS STUDIO</p></a></div>
+      <div class="card"><a href=""><img src="img/powerbi.png" alt="Image 3"><p>POWER BI</p></a></div>
+      <div class="card"><a href=""><img src="img/JavaScript-logo.png" alt="Image 3"><p>JavaScript </p></a></div>
+      <div class="card"><a href=""><img src="img/mate.png" alt="Image 3"><p>Matemáticas </p></a></div>
+
+      <!-- Add more cards as needed -->
+  </div>
+</div>
+
+<section class="layout">
+  <div class="izquierdabody">
+    <p class="tituloizquierda">LO MÁS VISTO</p>
+    <a href="">
+      <div class="contenido">
+      
+        <div class="imgcontenido">
+          <img src="img/sitio-web.png" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">DISEÑO WEB INFORMATIVO</p>
+          <p>Este curso/taller te enseña los fundamentos del diseño web, desde HTML y CSS hasta técnicas 
+            intermedias como el diseño responsivo. Ideal para principiantes y quienes buscan mejorar sus 
+            habilidades.</p>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="contenido">
+      
+        <div class="imgcontenido">
+          <img src="img/archivo-excel.png" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">BASE DE DATOS CON EXCEL</p>
+          <p>Este curso/taller te guía en el uso de Excel desde lo básico hasta temas avanzados como el uso 
+            de Macros y la creación de bases de datos. Ideal para quienes desean dominar herramientas clave 
+            para la gestión eficiente de datos.</p>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="contenido">
+      
+        <div class="imgcontenido">
+          <img src="img/images.png" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">ANIMACION BASICA CON ANIMATE CC</p>
+          <p>Este curso/taller te enseña a usar Adobe Animate CC desde lo básico hasta técnicas avanzadas. 
+            Aprenderás a crear animaciones interactivas y contenido multimedia, ideal para quienes desean 
+            dar vida a sus ideas digitales.</p>
+        </div>
+      </div>
+    </a>
+    <a href="">
+      <div class="contenido">
+      
+        <div class="imgcontenido">
+          <img src="img/appcreator.png" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">CREACION DE APLICACIONES CON APPCREATOR24</p>
+          <p>Este curso/taller te guía en la creación de aplicaciones móviles con AppCreator24, desde 
+            lo básico hasta funciones avanzadas. Ideal para quienes desean desarrollar aplicaciones sin 
+            necesidad de programación.</p>
+        </div>
+      </div>
+    </a>
+    <div class="botones"></div>
+  </div>
+  <div class="derechabody">2</div>
+</section>
+  
+
+<!-------------------------------->
+
+  <div style="width: 100%;" w1-include-html="footer.html">
+  </div>
+  <script>
+    includefooter();
+</script>
+<!--AQUI ESTA EL FOOOTER-->
+  
+<!------------------------>
+
+  <!-- === Swiper JS === -->
+  <script src="JS/swiper-bundle-min.js"></script>
+  <!-- === Script === -->
+
+
+  <script src="script.js">
+  </script>
+  <link rel="stylesheet" href="JS/script.js">
+  <div id="ultimo"></div>
+</body>
+</html>

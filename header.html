@@ -1,0 +1,193 @@
+
+<header class="main-header">
+    <a href="/index.html"><img class="imgtitle" src="https://i.ibb.co/R7zcLvk/ERlogo.png" alt=""></a>
+    <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
+    <input type="checkbox" id="btn-nav">
+    <nav>
+    
+      <ul class="navigation">
+        <li><a href="/index.html"><i class="fa fa-user"></i> INICIO</a></li>
+        <li><a href=""><i class="fa fa-book"></i> TEORIA PRE</a></li>
+        <li><a href=""><i class="fa fa-paperclip"></i> PRACTICA PRE</a></li>
+        <li><a href=""><i class="fa fa-mobile"></i> NUESTRA APP</a></li>
+      </ul>
+    </nav>
+  </header>
+<style>
+:root{
+  --main-color:#fff;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:'Roboto' , 'sans-serif';
+}
+
+.main-header{
+  position: relative;
+  z-index: 100;
+    background: #414141;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+nav{
+  position: fixed;
+  z-index: 100;
+  left:0;
+  top:0;
+  width: 200px;
+  top:80px;
+  height: 100%;
+  background: #414141;  /* fallback for old browsers */
+  transform:translateX(-100%);
+  transition:.4s ease;
+}
+
+.navigation li{
+  list-style:none;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.navigation a{
+  color:var(--main-color);
+  display: block;
+  line-height:3.5;
+  padding: 0 10px;
+  text-decoration:none;
+  transition:.4s ease;
+}
+
+.navigation a:hover{
+  transform:translateX(10%);
+}
+
+#btn-nav{
+  display: none;
+}
+
+#btn-nav:checked ~ nav{
+  transform:translateX(0);
+}
+
+.btn-nav{
+  color:var(--main-color);
+  font-size:59px;
+  position: absolute;
+  left:0;
+  top:0;
+  cursor:pointer;
+  padding:6.5px 15px;
+  transition:.2s ease;
+  background:rgba(0,0,0,.1);
+}
+
+.btn-nav:hover{
+  background:rgba(0,0,0,.3);
+}
+.imgtitle{
+    
+    width: 340px;
+    height: 85px;
+}
+@media (max-width:440px){
+    .imgtitle{
+    margin-left: 16px;
+    width: 260px;
+    height: 65px;
+}
+}
+@media (max-width:426px){
+  .main-header{
+  z-index: 100;
+  background: #414141;
+  width: 100%;
+  height:60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn-nav{
+  color:var(--main-color);
+  font-size:40px;
+  position: absolute;
+  left:0;
+  top:0;
+  cursor:pointer;
+  padding:6.5px 15px;
+  transition:.2s ease;
+  background:rgba(0,0,0,.1);
+}
+nav{
+  z-index: 100;
+  left:0;
+  top:0;
+  width: 200px;
+  top:60px;
+  height: 100%;
+  background: #414141;  /* fallback for old browsers */
+  transform:translateX(-100%);
+  transition:.4s ease;
+}
+.imgtitle{
+    
+    width: 235px;
+    height: 55px;
+}
+
+}
+@media (max-width:326px){
+  .main-header{
+  z-index: 100;
+  background: #414141;
+  width: 100%;
+  height:50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn-nav{
+  color:var(--main-color);
+  font-size:30px;
+  position: absolute;
+  left:0;
+  top:0;
+  cursor:pointer;
+  padding:6.5px 15px;
+  transition:.2s ease;
+  background:rgba(0,0,0,.1);
+}
+nav{
+
+  z-index: 100;
+  left:0;
+  top:0;
+  width: 200px;
+  top:50px;
+  height: 100%;
+  background: #414141;  /* fallback for old browsers */
+  transform:translateX(-100%);
+  transition:.4s ease;
+}
+.imgtitle{
+    
+    width: 215px;
+    height: 45px;
+}
+
+}
+</style>
