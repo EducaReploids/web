@@ -131,7 +131,8 @@ header {
 }
 
 .navbar ul li a:hover {
-  background-color: #0056b3; /* Fondo azul más oscuro en hover */
+  background-color: #006ce0;
+  color: white; /* Fondo azul más oscuro en hover */
 }
 
 /* Fondo de superposición cuando el menú está activo */
