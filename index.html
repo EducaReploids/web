@@ -11,87 +11,51 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style_slider.css">
     <link rel="stylesheet" href="css/swiper-bundle-min.css">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-------HEADER-------->
-    <!--
-    <script>
-      function includeheader() {
-        var z, i, elmnt, file, xhttp;
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-          elmnt = z[i];
-          /*search for elements with a certain atrribute:*/
-          file = elmnt.getAttribute("w2-include-html");
-          if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4) {
-                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                /* Remove the attribute, and call this function once more: */
-                elmnt.removeAttribute("w2-include-html");
-                includeheader();
-              }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
-          }
-        }
-      }
-    </script>
-    -->
-    
 
-
-    <!--------FOOTER------->
-    <script>
-      function includefooter() {
-        var z, i, elmnt, file, xhttp;
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-          elmnt = z[i];
-          /*search for elements with a certain atrribute:*/
-          file = elmnt.getAttribute("w1-include-html");
-          if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4) {
-                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                /* Remove the attribute, and call this function once more: */
-                elmnt.removeAttribute("w1-include-html");
-                includefooter();
-              }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
-          }
-        }
-      }
-    </script>
 </head>
 <body>
 
   <!-----AQUI ESTA EL HEADER----->
-  <div style="width: 100%;" w2-include-html="header.html">
-  </div>
+  <header>
+    <div class="header-left">
+        <img id="imgheader" src="img/ERlogo.png" alt="">
+        <div id="menu-btn" class="menu-btn"><img src="img/lista.png" alt="">
+    </div>
+</header>
 
-  <script>
-        includeheader();
-  </script>
+<nav id="navbar" class="navbar">
+    <img class="navimg" src="img/logo2.png" alt="">
+    <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="#">PRIMARIA</a>
+            <ul>
+                <li><a href="#">5to de primaria</a></li>
+                <li><a href="#">6to de primaria</a></li>
+            </ul>
+        </li>
+        <li><a href="#">SECUNDARIA</a>
+            <ul>
+                <li><a href="#">1ro de secundaria</a></li>
+                <li><a href="#">2do de secundaria</a></li>
+                <li><a href="#">3ero de secundaria</a></li>
+            </ul>
+        </li>
+        <li><a href="#">JUEGOS</a></li>
+        <li><a href="#">VIDEO CLASES</a></li>
+    </ul>
+    <div class="redesSocialesDiv">
+        <p>redes sociales:</p> 
+        <div>
+            <a href=""><img class="redesSociales" src="img/face.png" alt=""></a>
+            <a href=""><img class="redesSociales" src="img/youtube.png" alt=""></a>
+            <a href=""><img class="redesSociales" src="img/tiktok.png" alt=""></a>
+        </div>
+    </div>
+    
+</nav>
   <!----------------------------->
 
 <!--AQUI VA EL CONTENIDO CENTRAL-->
@@ -147,7 +111,7 @@
       </a>
       <a href="">
         <div class="wc-slide-item">
-          <img 
+          <img
               src="img/word.png" loading="lazy" alt="Thumbnail"
           >
           <h4 class="cb-title">MICROSOFT WORD</h4>
@@ -279,7 +243,7 @@ data-preference-id="710810983-79b6d544-8a50-4d27-a1e8-d77af4b59afa" data-source=
   </div>
   <script>
     includefooter();
-</script>
+  </script>
 <!--AQUI ESTA EL FOOOTER-->
   
 <!------------------------>
@@ -291,7 +255,25 @@ data-preference-id="710810983-79b6d544-8a50-4d27-a1e8-d77af4b59afa" data-source=
 
   <script src="script.js">
   </script>
-  <link rel="stylesheet" href="JS/script.js">
+  <!--MENU-->
+  <script>
+    // Manejador para el botón del menú
+    document.getElementById('menu-btn').addEventListener('click', function() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('active');
+    });
+
+    // Manejador para ocultar el menú cuando se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        const navbar = document.getElementById('navbar');
+        const menuBtn = document.getElementById('menu-btn');
+
+        // Verifica si el clic fue fuera del navbar y del botón del menú
+        if (!navbar.contains(event.target) && !menuBtn.contains(event.target)) {
+            navbar.classList.remove('active');
+        }
+    });
+  </script>
   <div id="ultimo"></div>
 </body>
 </html>
