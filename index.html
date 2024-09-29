@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="https://i.ibb.co/3zngVXX/logoApp.png">
-    <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDUCAREPLOIDS</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="https://i.ibb.co/3zngVXX/logoApp.png">
+    <title>Web Tipo App</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style_slider.css">
@@ -16,267 +15,391 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5900ff;
+}
+/* Fondo de superposición cuando el menú está activo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: none; /* Oculto por defecto */
+  z-index: 999; /* Debajo del menú, pero encima del contenido */
+}
+/* Mostrar overlay */
+.overlay.active {
+  display: block;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+.wc-slide-containder{
+  height: 150px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.wc-slide-containder::-webkit-scrollbar {
+  opacity: 0;
+}
+
+.wc-slider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+
+  transition: all 0.2s;
+  transform: scale(0.995);
+  cursor: grab;
+  background-color: rgba(255, 255, 255, 0);
+}
+.wc-slider a{
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.wc-slider.active{
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  
+}
+
+.wc-slide-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+    background-color: #eee;
+    width: 100px;
+    height: 108px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+}
+.wc-slide-item.active{
+  transform: scale(1.05);
+}
+
+.wc-slide-item > img{
+  height: 40%;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.wc-slide-item > h4 {
+  color: #002563;
+  margin: 5px;
+  text-decoration: underline;
+
+}
+
+.wc-slide-item > p{
+  color: #666666;
+  margin: 0;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px 20px;
+    background-color: #0080ff00;
+    border-bottom: 2px solid #45454579;
+    height: 70px; /* Puedes ajustar la altura según prefieras */
+    top: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que el header esté por encima del contenido */
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    width: 250px; /* Prioriza el ancho sobre el alto */
+    height: auto;
+    display: block; /* Asegura que se comporta como un bloque */
+}
+
+.icon-container {
+    display: flex;
+    gap: 20px;
+}
+.contenido{
+    padding: 11px;
+    width: 94%;
+    display: flex;
+    border-radius: 20px;
+    margin: 15px auto;
+    align-items: center;
+    background-color: #00585793;
+    color: white;
+}
+
+.imgcontenido img{
+  width: 70px;
+  height:70px;
+  margin:4px;
+}
+.textocontenido{
+  width: fit-content;
+  text-align: justify;
+  font-size: 14px;
+}
+.textocontenido .title{
+  font-size: 16px;
+  text-align: left;
+  height: fit-content;
+  font-weight: 900;
+}
+
+
+.icon {
+    width: 30px; /* Tamaño de los íconos */
+    height: 30px;
+    cursor: pointer;
+    display: block; /* Asegura que los íconos también se comporten como bloques */
+}
+.tituloizquierda{
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #e3e3e3;
+}
+.izquierdabody a{
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+    .app-header {
+        padding: 10px;
+    }
+
+    .logo {
+        max-width: 220px; /* Reduce el tamaño del logo en tablets */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .app-header {
+        padding: 8px;
+        height: 60px;
+    }
+
+    .logo {
+        max-width: 200px; /* Reduce más el tamaño del logo en móviles */
+    }
+
+
+}
+
+</style>
 <body>
-
-  <!-----AQUI ESTA EL HEADER----->
-  <header>
-    <div class="header-left">
-        <img id="imgheader" src="img/ERlogo.png" alt="">
-        <div id="menu-btn" class="menu-btn"><img src="img/lista.png" alt="">
-    </div>
-</header>
-
-<nav id="navbar" class="navbar">
-    <img class="navimg" src="img/ERlogo.png" alt="">
-    <ul>
-        <li><a href="index.html">INICIO</a></li>
-        <li><a href="#">MATERIALES</a>
-            <ul>
-                <li><a href="#">MEDICINA</a></li>
-                <li><a href="#">INGENIERIA</a></li>
-            </ul>
-        </li>
-        <li><a href="#">PRACTICAS</a>
-            <ul>
-                <li><a href="#">QUIZ</a></li>
-                <li><a href="#">CLASES GRABADAS</a></li>
-                <li><a href="#">FORO</a></li>
-            </ul>
-        </li>
-        <li><a href="#">VIDEO CLASES</a></li>
-    </ul>
-    <div class="redesSocialesDiv">
-        <p>Redes Sociales:</p> 
-        <div>
-            <a href=""><img class="redesSociales" src="img/face.png" alt=""></a>
-            <a href=""><img class="redesSociales" src="img/youtube.png" alt=""></a>
-            <a href=""><img class="redesSociales" src="img/tiktok.png" alt=""></a>
+    <header class="app-header">
+        <div class="logo-container">
+            <img src="img/ERlogo.png" alt="Logo de la Empresa" class="logo">
         </div>
-    </div>
-    
-</nav>
-  <!----------------------------->
-
-<!--AQUI VA EL CONTENIDO CENTRAL-->
-<div class="wc-slide-containder">
-  <div class="wc-slider">
-      <a href="google.com">
-
-        <div class="wc-slide-item">
-          <img 
-              src="img/sitio-web.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">DISEÑO WEB</h4>
-          <p class="cb description">
-              HTML - CSS - JS
-          </p>
+        <div class="icon-container">
+            <a href=""><img src="img/campana-de-notificacion.png" alt="Mensajes" class="icon"></a>
+            <a href=""><img src="img/msj.png" alt="Notificaciones" class="icon"></a>
+            
+        </div>
+    </header>
+    <img style="width: 250px;" src="img/recur.png" alt="">
+    <div class="wc-slide-containder">
+        <div class="wc-slider">
+            <a href="google.com">
+      
+              <div class="wc-slide-item">
+                <img 
+                    src="img/sitio-web.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">I CICLO</h4>
+                
+            </div>
+            </a>
+            <a href="">
+              
+                <div class="wc-slide-item">
+                  <img 
+                      src="img/archivo-excel.png" loading="lazy" alt="Thumbnail"
+                  >
+                  <h4 class="cb-title">II CICLO</h4>
+                  <p class="cb description">
+                      
+                  </p>
+              </div>
+              
+            </a>
+            <a href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/images.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">III CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            
+            <a href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/appcreator.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">IV CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a href="">
+              <div class="wc-slide-item">
+                <img
+                    src="img/word.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">V CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/obs.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">VI CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/powerbi.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">VII CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/JavaScript-logo.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">VIII CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/mate.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">IX</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            
+        </div>
       </div>
-      </a>
-      <a href="">
+    <img style="width: 140px; margin-left:5px;" src="img/recu.png" alt="">
+    <div class="izquierdabody">
         
-          <div class="wc-slide-item">
-            <img 
-                src="img/archivo-excel.png" loading="lazy" alt="Thumbnail"
-            >
-            <h4 class="cb-title">GESTION CON EXCEL</h4>
-            <p class="cb description">
-                BASICO - INTERMEDIO
-            </p>
-        </div>
         
-      </a>
-      <a href="">
-        <div class="wc-slide-item">
-          <img 
-              src="img/images.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">ANIMATE CC</h4>
-          <p class="cb description">
-              Sprite animation - Tutoriales
-          </p>
-      </div>
-      </a>
-      
-      <a href="">
-        <div class="wc-slide-item">
-          <img 
-              src="img/appcreator.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">APPCREATOR24</h4>
-          <p class="cb description">
-              App móviles - Publicación en Play Store
-          </p>
-      </div>
-      </a>
-      <a href="">
-        <div class="wc-slide-item">
-          <img
-              src="img/word.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">MICROSOFT WORD</h4>
-          <p class="cb description">
-              Tutoriales - Materiales
-          </p>
-      </div>
-      </a>
-      <a href="">
-        <div class="wc-slide-item">
-          <img 
-              src="img/obs.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">OBS</h4>
-          <p class="cb description">
-              TIPS - SCRIPS - TUTURIALES
-          </p>
-      </div>
-      </a>
-      <a href="">
-        <div class="wc-slide-item">
-          <img 
-              src="img/powerbi.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">POWER BI</h4>
-          <p class="cb description">
-              BASICO - INTERMEDIO
-          </p>
-      </div>
-      </a>
-      <a href="">
-        <div class="wc-slide-item">
-          <img 
-              src="img/JavaScript-logo.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">JS</h4>
-          <p class="cb description">
-              Mini Tutoriales
-          </p>
-      </div>
-      </a>
-      <a href="">
-        <div class="wc-slide-item">
-          <img 
-              src="img/mate.png" loading="lazy" alt="Thumbnail"
-          >
-          <h4 class="cb-title">MATEMÁTICAS</h4>
-          <p class="cb description">
-              Estadística - Álgebra - Aritmética
-          </p>
-      </div>
-      </a>
-      
-  </div>
-</div>
-
-<section class="layout">
-  <div class="izquierdabody">
-    <p class="tituloizquierda">LO MÁS VISTO</p>
-    <a href="">
-      <div class="contenido">
-      
-        <div class="imgcontenido">
-          <img src="img/sitio-web.png" alt="">
-        </div>
-        <div class="textocontenido">
-          <p class="title">DISEÑO WEB INFORMATIVO</p>
-          <p>Este curso/taller te enseña los fundamentos del diseño web, desde HTML y CSS hasta técnicas 
-            intermedias como el diseño responsivo. Ideal para principiantes y quienes buscan mejorar sus 
-            habilidades.</p>
-        </div>
-      </div>
-    </a>
-    <a href="">
-      <div class="contenido">
-      
-        <div class="imgcontenido">
-          <img src="img/archivo-excel.png" alt="">
-        </div>
-        <div class="textocontenido">
-          <p class="title">BASE DE DATOS CON EXCEL</p>
-          <p>Este curso/taller te guía en el uso de Excel desde lo básico hasta temas avanzados como el uso 
-            de Macros y la creación de bases de datos. Ideal para quienes desean dominar herramientas clave 
-            para la gestión eficiente de datos.</p>
-        </div>
-      </div>
-    </a>
-    <a href="">
-      <div class="contenido">
-      
-        <div class="imgcontenido">
-          <img src="img/images.png" alt="">
-        </div>
-        <div class="textocontenido">
-          <p class="title">ANIMACION BASICA CON ANIMATE CC</p>
-          <p>Este curso/taller te enseña a usar Adobe Animate CC desde lo básico hasta técnicas avanzadas. 
-            Aprenderás a crear animaciones interactivas y contenido multimedia, ideal para quienes desean 
-            dar vida a sus ideas digitales.</p>
-        </div>
-      </div>
-    </a>
-    <a href="">
-      <div class="contenido">
-      
-        <div class="imgcontenido">
-          <img src="img/appcreator.png" alt="">
-        </div>
-        <div class="textocontenido">
-          <p class="title">CREACION DE APLICACIONES CON APPCREATOR24</p>
-          <p>Este curso/taller te guía en la creación de aplicaciones móviles con AppCreator24, desde 
-            lo básico hasta funciones avanzadas. Ideal para quienes desean desarrollar aplicaciones sin 
-            necesidad de programación.</p>
-        </div>
-      </div>
-    </a>
-    <div class="botones"></div>
-  </div>
-  <div class="derechabody">
-    <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
-data-preference-id="710810983-79b6d544-8a50-4d27-a1e8-d77af4b59afa" data-source="button">
-</script>
-  </div>
-</section>
-  
-
-<!-------------------------------->
-<footer>
-  <img src="img/ERlogo.png" alt="Logo Empresa">
-  <div class="social-links">
-      <a class="redes" href="#">Facebook</a>
-      <a class="redes" href="#">YouTube</a>
-      <a class="redes" href="#">TikTok</a>
-  </div>
-  <p>EducaReploids todos los derechos reservados</p>
-  <p></p>
-</footer>
-<!--AQUI ESTA EL FOOOTER-->
-  
-<!------------------------>
-
-  <!-- === Swiper JS === -->
-  <script src="JS/swiper-bundle-min.js"></script>
+        <a href="">
+          <div class="contenido">
+          
+            <div class="imgcontenido">
+              <img src="img/biblio.png" alt="">
+            </div>
+            <div class="textocontenido">
+              <p class="title">BIBLIOTECA VIRTUAL</p>
+              <p>¡Toda la teoria para estudiar! Busca los recursos en esta biblioteca almacenada en Google Drive.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+            <div class="contenido">
+            
+              <div class="imgcontenido">
+                <img src="img/video.gif" alt="">
+              </div>
+              <div class="textocontenido">
+                <p class="title">VIDEO TUTORIALES</p>
+                <p>¡Aprende con tutoriales disponibles de distintos temas para tus cursos
+                  de la universidad!
+                </p>
+              </div>
+            </div>
+          </a>
+        <a href="">
+          <div class="contenido">
+          
+            <div class="imgcontenido">
+              <img src="img/images.png" alt="">
+            </div>
+            <div class="textocontenido">
+              <p class="title">ANIMACION BASICA CON ANIMATE CC</p>
+              <p>Este curso/taller te enseña a usar Adobe Animate CC desde lo básico hasta técnicas avanzadas. 
+                Aprenderás a crear animaciones interactivas y contenido multimedia, ideal para quienes desean 
+                dar vida a sus ideas digitales.</p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="contenido">
+          
+            <div class="imgcontenido">
+              <img src="img/appcreator.png" alt="">
+            </div>
+            <div class="textocontenido">
+              <p class="title">CREACION DE APLICACIONES CON APPCREATOR24</p>
+              <p>Este curso/taller te guía en la creación de aplicaciones móviles con AppCreator24, desde 
+                lo básico hasta funciones avanzadas. Ideal para quienes desean desarrollar aplicaciones sin 
+                necesidad de programación.</p>
+            </div>
+          </div>
+        </a>
+        <div class="botones"></div>
+    </div>
   <!-- === Script === -->
 
 
   <script src="script.js">
-  </script>
-  <!--MENU-->
-  <script>
-    // Manejador para el botón del menú
-    document.getElementById('menu-btn').addEventListener('click', function() {
-        const navbar = document.getElementById('navbar');
-        navbar.classList.toggle('active');
-    });
-
-    // Manejador para ocultar el menú cuando se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        const navbar = document.getElementById('navbar');
-        const menuBtn = document.getElementById('menu-btn');
-
-        // Verifica si el clic fue fuera del navbar y del botón del menú
-        if (!navbar.contains(event.target) && !menuBtn.contains(event.target)) {
-            navbar.classList.remove('active');
-        }
-    });
-  </script>
-  <div id="ultimo"></div>
+</script>
 </body>
 </html>
