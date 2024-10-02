@@ -13,7 +13,68 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-------HEADER-------->
+    <script>
+      function includeheader() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w2-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w2-include-html");
+                includeheader();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
 
+
+    <!--------FOOTER------->
+    <script>
+      function includefooter() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w1-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w1-include-html");
+                includefooter();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
 </head>
 <style>
     * {
@@ -105,33 +166,7 @@ body {
 }
 
 
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Alinea verticalmente los elementos */
-    padding: 10px 20px;
-    background-color: #0080ff00;
-    border-bottom: 2px solid #45454579;
-    height: 70px; /* Puedes ajustar la altura según prefieras */
-    top: 0;
-    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
-    z-index: 1000; /* Asegura que el header esté por encima del contenido */
-}
 
-.logo-container {
-    flex: 1;
-}
-
-.logo {
-    width: 250px; /* Prioriza el ancho sobre el alto */
-    height: auto;
-    display: block; /* Asegura que se comporta como un bloque */
-}
-
-.icon-container {
-    display: flex;
-    gap: 20px;
-}
 .contenido{
     padding: 11px;
     width: 94%;
@@ -164,63 +199,20 @@ body {
 }
 
 
-.icon {
-    width: 30px; /* Tamaño de los íconos */
-    height: 30px;
-    cursor: pointer;
-    display: block; /* Asegura que los íconos también se comporten como bloques */
-}
-.tituloizquierda{
-  font-size: 20px;
-  font-weight: 900;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: #e3e3e3;
-}
-.izquierdabody a{
-  text-decoration: none;
-  color: black;
-  width: 100%;
-}
 
-@media (max-width: 768px) {
-    .app-header {
-        padding: 10px;
-    }
-
-    .logo {
-        max-width: 220px; /* Reduce el tamaño del logo en tablets */
-    }
-
-}
-
-@media (max-width: 480px) {
-    .app-header {
-        padding: 8px;
-        height: 60px;
-    }
-
-    .logo {
-        max-width: 200px; /* Reduce más el tamaño del logo en móviles */
-    }
-
-
-}
 
 </style>
 <body>
-    <header class="app-header">
-        <div class="logo-container">
-            <img src="img/mfeilogo.png" alt="Logo de la Empresa" class="logo">
-        </div>
-        <div class="icon-container">
-            <a href="http://action_notifications"><img src="img/campana-de-notificacion.png" alt="Mensajes" class="icon"></a>
-            <a href="http://action_offices"><img src="img/msj.png" alt="Notificaciones" class="icon"></a>
-            
-        </div>
-    </header>
+    <!-----AQUI ESTA EL HEADER----->
+  <div style="width: 100%;" w2-include-html="header.html">
+
+  </div>
+
+  <script>
+        includeheader();
+  </script>
+  <!----------------------------->
+
     <img style="width: 250px;" src="img/recur.png" alt="">
     <div class="wc-slide-containder">
         <div class="wc-slider">
@@ -329,7 +321,7 @@ body {
       </div>
     <img style="width: 140px; margin-left:5px;" src="img/recu.png" alt="">
     <div class="izquierdabody">
-        <a href="">
+        <a href="seleccionCiclo.html">
           <div class="contenido">
             <div class="imgcontenido">
               <img style="border-radius: 50px;" src="img/dgbiblio.gif" alt="">
@@ -395,21 +387,17 @@ body {
             </div>
           </a>
     </div>
-    <footer style="background-color: #2b2b2b;
-    color: white;
-    height: 100%;
-    display: flex;
-    margin: auto;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    flex-wrap: wrap;">
-      <p style="height: 100%; margin: 0; display: flex; vertical-align: middle; text-align: center; align-items: center;">Power by <a style="text-decoration: none; color: rgb(0, 213, 255); font-weight: 900; height: 100%;" href=""><img style="height: 50px; margin-left: 5px;" src="img/ERlogo.png" alt=""></a></p>
-    </footer>
+    <!--AQUI ESTA EL FOOTER-->
+    <div style="width: 100%;" w1-include-html="footer.html">
+
+    </div>
+
+    <!--INCLUSION DEL FOOTER-->
+  <script>
+    includefooter();
+  </script>
+
   <!-- === Script === -->
-
-
   <script src="script.js">
 </script>
 </body>
