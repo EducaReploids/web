@@ -1,193 +1,93 @@
-
-<header class="main-header">
-    <a href="/index.html"><img class="imgtitle" src="https://i.ibb.co/R7zcLvk/ERlogo.png" alt=""></a>
-    <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
-    <input type="checkbox" id="btn-nav">
-    <nav>
-    
-      <ul class="navigation">
-        <li><a href="/index.html"><i class="fa fa-user"></i> INICIO</a></li>
-        <li><a href=""><i class="fa fa-book"></i> TEORIA PRE</a></li>
-        <li><a href=""><i class="fa fa-paperclip"></i> PRACTICA PRE</a></li>
-        <li><a href=""><i class="fa fa-mobile"></i> NUESTRA APP</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="app-header">
+    <div class="logo-container">
+        <img src="img/mfeilogo.png" alt="Logo de la Empresa" class="logo">
+    </div>
+    <div class="icon-container">
+        <a href="http://action_notifications"><img src="img/campana-de-notificacion.png" alt="Mensajes" class="icon"></a>
+        <a href="http://action_offices"><img src="img/msj.png" alt="Notificaciones" class="icon"></a>
+        
+    </div>
+</header>
 <style>
-:root{
-  --main-color:#fff;
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    
 }
-
-body{
-  font-family:'Roboto' , 'sans-serif';
-}
-
-.main-header{
-  position: relative;
-  z-index: 100;
-    background: #414141;
-    width: 100%;
-    height: 80px;
+header {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
+    background-color: #0000fe;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px 20px;
+    background-color: #0080ff00;
+    border-bottom: 2px solid #45454579;
+    height: 70px; /* Puedes ajustar la altura según prefieras */
+    top: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que el header esté por encima del contenido */
 }
 
-nav{
-  position: fixed;
-  z-index: 100;
-  left:0;
-  top:0;
-  width: 200px;
-  top:80px;
-  height: 100%;
-  background: #414141;  /* fallback for old browsers */
-  transform:translateX(-100%);
-  transition:.4s ease;
+.logo-container {
+    flex: 1;
 }
 
-.navigation li{
-  list-style:none;
-  width: 100%;
-  border-bottom: 1px solid rgba(255,255,255,.5);
+.logo {
+    width: 250px; /* Prioriza el ancho sobre el alto */
+    height: auto;
+    display: block; /* Asegura que se comporta como un bloque */
 }
 
-.navigation a{
-  color:var(--main-color);
-  display: block;
-  line-height:3.5;
-  padding: 0 10px;
-  text-decoration:none;
-  transition:.4s ease;
+.icon-container {
+    display: flex;
+    gap: 20px;
 }
-
-.navigation a:hover{
-  transform:translateX(10%);
+.icon {
+    width: 30px; /* Tamaño de los íconos */
+    height: 30px;
+    cursor: pointer;
+    display: block; /* Asegura que los íconos también se comporten como bloques */
 }
-
-#btn-nav{
-  display: none;
-}
-
-#btn-nav:checked ~ nav{
-  transform:translateX(0);
-}
-
-.btn-nav{
-  color:var(--main-color);
-  font-size:59px;
-  position: absolute;
-  left:0;
-  top:0;
-  cursor:pointer;
-  padding:6.5px 15px;
-  transition:.2s ease;
-  background:rgba(0,0,0,.1);
-}
-
-.btn-nav:hover{
-  background:rgba(0,0,0,.3);
-}
-.imgtitle{
-    
-    width: 340px;
-    height: 85px;
-}
-@media (max-width:440px){
-    .imgtitle{
-    margin-left: 16px;
-    width: 260px;
-    height: 65px;
-}
-}
-@media (max-width:426px){
-  .main-header{
-  z-index: 100;
-  background: #414141;
-  width: 100%;
-  height:60px;
+.tituloizquierda{
+  font-size: 20px;
+  font-weight: 900;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  text-align: center;
   align-items: center;
+  justify-content: center;
+  color: #e3e3e3;
 }
-.btn-nav{
-  color:var(--main-color);
-  font-size:40px;
-  position: absolute;
-  left:0;
-  top:0;
-  cursor:pointer;
-  padding:6.5px 15px;
-  transition:.2s ease;
-  background:rgba(0,0,0,.1);
-}
-nav{
-  z-index: 100;
-  left:0;
-  top:0;
-  width: 200px;
-  top:60px;
-  height: 100%;
-  background: #414141;  /* fallback for old browsers */
-  transform:translateX(-100%);
-  transition:.4s ease;
-}
-.imgtitle{
-    
-    width: 235px;
-    height: 55px;
-}
-
-}
-@media (max-width:326px){
-  .main-header{
-  z-index: 100;
-  background: #414141;
+.izquierdabody a{
+  text-decoration: none;
+  color: black;
   width: 100%;
-  height:50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
-.btn-nav{
-  color:var(--main-color);
-  font-size:30px;
-  position: absolute;
-  left:0;
-  top:0;
-  cursor:pointer;
-  padding:6.5px 15px;
-  transition:.2s ease;
-  background:rgba(0,0,0,.1);
-}
-nav{
+    @media (max-width: 768px) {
+    .app-header {
+        padding: 10px;
+        background-color: #0000fe;
+    }
 
-  z-index: 100;
-  left:0;
-  top:0;
-  width: 200px;
-  top:50px;
-  height: 100%;
-  background: #414141;  /* fallback for old browsers */
-  transform:translateX(-100%);
-  transition:.4s ease;
+    .logo {
+        max-width: 220px; /* Reduce el tamaño del logo en tablets */
+    }
+
 }
-.imgtitle{
-    
-    width: 215px;
-    height: 45px;
-}
+
+@media (max-width: 480px) {
+    .app-header {
+        padding: 8px;
+        height: 60px;
+    }
+
+    .logo {
+        max-width: 200px; /* Reduce más el tamaño del logo en móviles */
+    }
+
 
 }
 </style>
