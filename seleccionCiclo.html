@@ -5,7 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SELECCION DE CICLO</title>
     <!-------HEADER-------->
-    
+    <script>
+        function includeheader() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w2-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w2-include-html");
+                  includeheader();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+      </script>
   
   
       <!--------FOOTER------->
@@ -40,6 +68,20 @@
       </script>
 </head>
 <style>
+  body{
+    background-color: #00aeff;
+    margin: 0;
+    padding: 0;
+  }
+  .imgcontenido{
+    width: 100%;
+  }
+  .imgcontenido img{
+  width: 70px;
+  height:70px;
+  margin:auto;
+  display: flex;
+}
     .contenedorCiclo{
         display: flex;
     width: 100%;
@@ -63,9 +105,10 @@
     justify-content: center;
     align-items: center;
     margin: 7px;
-    background-color: #eee;
     width: 130px;
     height: 130px;
+    border: #ffffff 3px solid;
+    background-color: #0058ef;
     border-radius: 10px;
     font-family: sans-serif;
     font-size: 12px;
@@ -79,20 +122,41 @@
 }
 
 .contenido > h4 {
-  color: #383838;
+  color: #ffffff;
   margin: 5px;
   font-weight: 900;
+  border-radius: 10px;
   text-decoration: none;
+  padding:  5px;
+  border: #ffffff 2px solid;
 }
 
 .contenido > p{
-  color: #666666;
+  color: #cfcfcf;
   margin: 0;
 }
 </style>
 <body>
+      <!-----<div style="width: 100%;" w2-include-html="header.html">
+
+  </div>
+
+  <script>
+        includeheader();
+  </script>----->
+  <a style="display: flex;
+  text-decoration: none;
+  font-size: 50px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap; position: relative;" href="index.html"><img style="width: 50px;" src="img/flechaiz.png" alt=""></a>
+  <img style="width: 100%;" src="img/bibliotecavirtual.png" alt="">
+  <div class="imgcontenido">
+    <img style="border-radius: 50px;" src="img/dgbiblio.gif" alt="">
+  </div>
     <div class="contenedorCiclo">
-        <a href="">
+        <a href="go:BB01">
             <div class="contenido">
                 <img src="img/gatofeli.png" alt="">
                 <h4>I CICLO</h4>
@@ -114,15 +178,51 @@
             <div class="contenido">
                 <img src="img/gatonerd.png" alt="">
                 <h4>IV CICLO</h4>
+                <p>próximamente</p>
             </div>
         </a>
         <a href="">
             <div class="contenido">
                 <img src="img/gatonervioso.png" alt="">
                 <h4>V CICLO</h4>
+                <p>próximamente</p>
+
             </div>
         </a>
+        <a href="">
+          <div class="contenido">
+              <img src="img/gatoexplosion.png" alt="">
+              <h4>VI CICLO</h4>
+              <p>próximamente</p>
+
+          </div>
+      </a>
+      <a href="">
+        <div class="contenido">
+            <img src="img/gatotite.png" alt="">
+            <h4>VII CICLO</h4>
+            <p>próximamente</p>
+
+        </div>
+    </a>
+    <a href="">
+      <div class="contenido">
+          <img src="img/gatohappy.png" alt="">
+          <h4>VIII CICLO</h4>
+          <p>próximamente</p>
+
+      </div>
+  </a>
     </div>
-    
+     <!--AQUI ESTA EL FOOTER-->
+     <div style="width: 100%; height: 100%;" w1-include-html="footer.html">
+
+     </div>
+ 
+     <!--INCLUSION DEL FOOTER-->
+   <script>
+     includefooter();
+   </script>
+ 
 </body>
 </html>
