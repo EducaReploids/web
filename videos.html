@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLASES VIRTUALES</title>
     <link rel="stylesheet" href="style.css">
+    <!--------FOOTER------->
+    <script>
+        function includefooter() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w1-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w1-include-html");
+                  includefooter();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+      </script>
 </head>
 <style>
     /* Estilos Generales */
@@ -264,7 +294,7 @@ body {
             <p>Contenido de Youtube y contenido de alumnos.</p>
         </div>
     </section>
-    <!-- Sección de Películas -->
+    <!-- -->
     <section class="movie-section" id="movies">
         <!-- Ciencias: Anatomía y Biología -->
         <div class="slider-container matematica Enumerica">
@@ -272,29 +302,29 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Anatomía 101</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Anatomía 101</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Anatomía 101</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Anatomía 101</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Anatomía 101</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Anatomía 101</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Anatomía -->
+                <!-- Más ítems de  -->
             </div>
         </div>
         <div class="slider-container matematica integrales">
@@ -302,27 +332,27 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
-                    <h3>Biología Avanzada</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
-                    <h3>Biología Avanzada</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
-                    <h3>Biología Avanzada</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
-                    <h3>Biología Avanzada</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
-                    <h3>Biología Avanzada</h3>
+                    <h3>Clase 01</h3>
                 </div>
 
                 
-                <!-- Más ítems de Biología -->
+                <!-- Más ítems de  -->
             </div>
         </div>
         <!-- Matemáticas: Aritmética, Estadística, etc. -->
@@ -331,21 +361,21 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Aritmética</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Aritmética</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Aritmética</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Aritmética</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Aritmética -->
+                <!-- Más ítems de  -->
             </div>
         </div>
 
@@ -354,21 +384,21 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Álgebra</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Álgebra</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Álgebra</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Álgebra</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Aritmética -->
+                <!-- Más ítems de  -->
             </div>
         </div>
 
@@ -377,21 +407,21 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Geometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Geometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Geometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Geometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Aritmética -->
+                <!-- Más ítems de  -->
             </div>
         </div>
 
@@ -400,21 +430,21 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Trigonometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Trigonometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Trigonometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Trigonometría</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Aritmética -->
+                <!-- Más ítems de  -->
             </div>
         </div>
 
@@ -423,21 +453,21 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Aritmética -->
+                <!-- Más ítems de  -->
             </div>
         </div>
         <div class="slider-container matematicas estadistica">
@@ -445,25 +475,34 @@ body {
             <div class="slider">
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
                     <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Aritmética"></a>
-                    <h3>Fundamentos de Estadística</h3>
+                    <h3>Clase 01</h3>
                 </div>
-                <!-- Más ítems de Aritmética -->
+                <!-- Más ítems de  -->
             </div>
         </div>
         <!-- Más categorías y subcategorías -->
     </section>
+    <!--AQUI ESTA EL FOOTER-->
+    <div style="width: 100%; height: 100%;" w1-include-html="footer.html">
+
+    </div>
+
+    <!--INCLUSION DEL FOOTER-->
+  <script>
+    includefooter();
+  </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
