@@ -76,10 +76,11 @@ body {
 }
 
 /* Filtro de Categorías Fijo */
+/* Filtro de Categorías Fijo */
 .category-filter {
     position: fixed;
     top: 0;
-    width: 93%;
+    width: 100%;
     background-color: #141414;
     z-index: 1000;
     padding: 1px 15px;
@@ -87,6 +88,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
 .filter-container {
@@ -108,8 +110,10 @@ body {
 .filter-nav {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-wrap: nowrap; /* Asegura que los ítems no se salten a una nueva línea */
+    overflow-x: auto; /* Añade el desplazamiento horizontal */
+    -webkit-overflow-scrolling: touch; /* Hace que el desplazamiento sea suave en móviles */
+    scroll-behavior: smooth;
 }
 
 .filter-nav a {
@@ -119,6 +123,7 @@ body {
     border-radius: 5px;
     background-color: #333;
     transition: background-color 0.3s;
+    white-space: nowrap; /* Evita que los ítems se rompan en varias líneas */
 }
 
 .filter-nav a:hover, .filter-nav a.active {
@@ -132,29 +137,15 @@ body {
     }
 
     .filter-nav {
-        display: none;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 5px;
-        background-color: #141414;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-        padding: 20px;
-        z-index: 1001;
+        display: none; /* Se oculta cuando no está visible */
     }
 
     .filter-nav.show {
-
         display: flex;
-        align-content: flex-end;
-        justify-content: flex-start;
-        align-items: center;
         flex-direction: row;
-        flex-wrap: wrap;
     }
 }
+
 
 /* Sección de Películas */
 .movie-section {
@@ -189,7 +180,7 @@ body {
 }
 
 .movie-item {
-    flex: 200px;
+    flex: 0 0 200px;
     background-color: #1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -260,6 +251,7 @@ body {
     color: #fff;
 }
 
+
 </style>
 <body>
     <!-- Loader -->
@@ -270,12 +262,10 @@ body {
     <!-- Menú de Navegación -->
     <header class="category-filter">
         <div class="filter-container">
-            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-            <p>FILTRADOR DE CONTENIDO</p>
-            <nav class="filter-nav" id="filter-nav">
+            <div class="slider filter-nav" id="filter-nav">
                 <a href="#" class="filter-btn" data-category="all">TODO</a>
                 <a href="#" class="filter-btn" data-category="matematica">MATEMÁTICA</a>
-                <a href="#" class="filter-btn" data-category="Enumerica">E. NUMERICAS</a>
+                <a href="#" class="filter-btn" data-category="Enumerica">E. NUMÉRICAS</a>
                 <a href="#" class="filter-btn" data-category="integrales">A. INTEGRAL</a>
                 <a href="#" class="filter-btn" data-category="logica">PENSAMIENTO LÓGICO</a>
                 <a href="#" class="filter-btn" data-category="carrera">CURSOS DE CARRERA</a>
@@ -284,7 +274,7 @@ body {
                 <a href="#" class="filter-btn" data-category="geometria">Geometría</a>
                 <a href="#" class="filter-btn" data-category="trigonometria">Trigonometría</a>
                 <a href="#" class="filter-btn" data-category="algebra">Álgebra</a>
-            </nav>
+            </div>
         </div>
     </header>
     <!-- Banner Promocional -->
@@ -295,35 +285,35 @@ body {
         </div>
     </section>
     <!-- -->
+    
+
     <section class="movie-section" id="movies">
         <!-- Ciencias: Anatomía y Biología -->
         <div class="slider-container matematica Enumerica">
             <h3>ESTRUCTURA NUMÉRICAS</h3>
             <div class="slider">
                 <div class="movie-item">
-                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
+                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
                     <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
-                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
+                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
                     <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
-                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
+                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
                     <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
-                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
+                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
                     <h3>Clase 01</h3>
                 </div>
                 <div class="movie-item">
-                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
+                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Biología"></a>
                     <h3>Clase 01</h3>
                 </div>
-                <div class="movie-item">
-                    <a href=""><img src="https://via.placeholder.com/200x300" alt="Película de Anatomía"></a>
-                    <h3>Clase 01</h3>
-                </div>
+
+                
                 <!-- Más ítems de  -->
             </div>
         </div>
@@ -503,107 +493,55 @@ body {
   <script>
     includefooter();
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Seleccionar todos los botones de filtro
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        
+        // Seleccionar todas las secciones de películas
+        const movieSections = document.querySelectorAll(".slider-container");
+
+        // Función para filtrar las secciones
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Quitar clase 'active' de todos los botones
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                // Añadir clase 'active' al botón clicado
+                this.classList.add("active");
+
+                // Obtener la categoría seleccionada
+                const category = this.getAttribute("data-category");
+
+                // Mostrar u ocultar las secciones según la categoría
+                movieSections.forEach(section => {
+                    if (category === "all") {
+                        // Mostrar todas las secciones si se selecciona "TODO"
+                        section.style.display = "block";
+                    } else {
+                        // Comprobar si la sección tiene la clase de la categoría seleccionada
+                        if (section.classList.contains(category)) {
+                            section.style.display = "block";
+                        } else {
+                            section.style.display = "none";
+                        }
+                    }
+                });
+            });
+        });
+    });
+</script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const filters = document.querySelectorAll('.filter-btn');
-    const sliders = document.querySelectorAll('.slider-container');
-    const menuToggle = document.getElementById('menu-toggle');
-    const filterNav = document.getElementById('filter-nav');
-
-    // Mostrar u ocultar el menú en dispositivos móviles
-    menuToggle.addEventListener('click', () => {
-        filterNav.classList.toggle('show');
-    });
-
-    // Filtrado de categorías
-    filters.forEach(filter => {
-        filter.addEventListener('click', (e) => {
-            e.preventDefault();
-            const category = filter.getAttribute('data-category');
-
-            filters.forEach(btn => btn.classList.remove('active'));
-            filter.classList.add('active');
-
-            sliders.forEach(slider => {
-                if (category === 'all') {
-                    slider.style.display = 'block';
-                } else if (slider.classList.contains(category)) {
-                    slider.style.display = 'block';
-                } else {
-                    slider.style.display = 'none';
-                }
-            });
-
-            // Ocultar el menú después de seleccionar una categoría en móvil
-            if (window.innerWidth <= 768) {
-                filterNav.classList.remove('show');
-            }
+    // Espera 5 segundos y luego oculta el loader y muestra el contenido principal
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none'; // Oculta el loader
+                document.getElementById('main-content').style.display = 'block'; // Muestra el contenido principal
+                document.body.style.overflow = 'auto'; // Permite el desplazamiento nuevamente
+            }, 2000); // 5000 ms = 5 segundos
         });
-    });
-
-    // Hacer draggable los sliders
-    const sliderElements = document.querySelectorAll('.slider');
-    sliderElements.forEach(slider => {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Velocidad de arrastre
-            slider.scrollLeft = scrollLeft - walk;
-        });
-
-        // Touch events para dispositivos móviles
-        slider.addEventListener('touchstart', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.touches[0].pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('touchend', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('touchmove', (e) => {
-            if (!isDown) return;
-            const x = e.touches[0].pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-    });
-});
-// Espera 5 segundos y luego oculta el loader y muestra el contenido principal
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('loader').style.display = 'none'; // Oculta el loader
-        document.getElementById('main-content').style.display = 'block'; // Muestra el contenido principal
-        document.body.style.overflow = 'auto'; // Permite el desplazamiento nuevamente
-    }, 2000); // 5000 ms = 5 segundos
-});
     </script>
-
 </body>
 </html>
