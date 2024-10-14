@@ -7,7 +7,10 @@
     
     <style>
       body {
-        background-color: #00aeff;
+        background: #0575E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0026b0, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0026b0, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         margin: 0;
         padding: 0;
         font-family: sans-serif;
@@ -119,6 +122,21 @@
       a.back-button img {
         width: 50px;
       }
+      .indicador{
+        margin: 0;
+        font-weight: 900;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  color: rgb(255, 213, 0);
+  border-radius: 0px 0px 25px 25px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-shadow: #2a2a2a 0px 0px 4px;
+}
     </style>
 </head>
 
@@ -134,8 +152,9 @@
   </a>
 
   <!-- Imagen principal -->
-  <img style="width: 100%;" src="img/videoxciclo.png" alt="Biblioteca Virtual">
-
+  <div class="indicador">
+    <h2>VIDEOS PRÁCTICOS</h2>
+  </div>
   <!-- Contenido central -->
   <div class="imgcontenido">
     <img src="img/videosssss-unscreen.gif" alt="Icono principal">
