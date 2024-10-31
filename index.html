@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        #tutorial-title{
+            color: white;
+            border-radius: 0px 0px 35px 35px;
+            background-color: #0033CC;
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+            justify-content: center;
+            vertical-align: middle;
+            text-shadow: #141414 0px 0px 4px;
+            box-shadow: #0a0a0a 0px 0px 10px;
+        }
+
+        .tutorial-container {
+            text-align: center;
+            border-radius: 10px;
+            margin: 0;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            width: 100%; /* Abarca casi toda la pantalla */
+            height:100%;
+            position: relative;
+        }
+        #tutorial-text {
+            padding: 5px;
+        }
+        .tutorial-image {
+            width: 100%;
+            height: 360px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .tutorial-image img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+        }
+        .skip-button {
+            position: absolute;
+            top: 55px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #007bff;
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        .controls button {
+            padding: 10px 10px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tutorial-container" id="tutorial">
+        <button class="skip-button" onclick="skipTutorial()">Skip <b>></b></button>
+        <h2 id="tutorial-title">Paso 1</h2>
+        <div class="tutorial-image" id="tutorial-image">
+            <img id="tutorial-img" src="" alt="Imagen del tutorial">
+        </div>
+        <p id="tutorial-text">Este es el primer paso del tutorial.</p>
+        <div class="controls">
+            <button onclick="prevStep()">Anterior</button>
+            <button onclick="nextStep()">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        const steps = [
+            {
+                title: "BIENVENIDO",
+                image: "https://via.placeholder.com/250", // Cambia la URL de la imagen aquí
+                text: "En la app de MFEI encontrarás mucho material universitario, con fines de reforzar las asignaturas más complejas de la carrera."
+            },
+            {
+                title: "RECURSOS",
+                image: "https://via.placeholder.com/250/ff7f7f", // Cambia la URL de la imagen aquí
+                text: "Podrás encontrar Documentos llenos de teoría, prácticas virtuales y videos educativos!"
+            },
+            {
+                title: "REGISTRATE",
+                image: "https://via.placeholder.com/250/7f7fff", // Cambia la URL de la imagen aquí
+                text: "Por favor, para ingresar, deberás registrarte."
+            }
+        ];
+
+        let currentStep = 0;
+
+        // Comprobar si ya se ha visto el tutorial
+        if (localStorage.getItem("tutorialCompleted")) {
+            window.location.href = "inicio.html"; // Redirigir si ya se completó el tutorial
+        }
+
+        function updateStep() {
+            const title = document.getElementById("tutorial-title");
+            const img = document.getElementById("tutorial-img");
+            const text = document.getElementById("tutorial-text");
+
+            title.textContent = steps[currentStep].title;
+            img.src = steps[currentStep].image; // Actualiza la fuente de la imagen
+            text.textContent = steps[currentStep].text;
+
+            // Mostrar botón de "registrarse" en el último paso
+            if (currentStep === steps.length - 1) {
+                document.querySelector('.controls').innerHTML = `
+                    <button onclick="prevStep()">Anterior</button>
+                    <button onclick="register()">Registrarse</button>
+                `;
+            } else {
+                document.querySelector('.controls').innerHTML = `
+                    <button onclick="prevStep()">Anterior</button>
+                    <button onclick="nextStep()">Siguiente</button>
+                `;
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                updateStep();
+            } else {
+                completeTutorial(); // Completar el tutorial al llegar al final
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                updateStep();
+            }
+        }
+
+        function skipTutorial() {
+            completeTutorial(); // Completar el tutorial al saltarlo
+        }
+
+        function completeTutorial() {
+            localStorage.setItem("tutorialCompleted", "true"); // Marca el tutorial como completado
+            window.location.href = "inicio.html"; // Redirigir al index.html
+        }
+
+        function register() {
+            window.location.href = "http://action_profile"; // Redirigir al enlace especificado
+        }
+
+        // Inicializar el tutorial
+        updateStep();
+    </script>
+
+</body>
+</html>
