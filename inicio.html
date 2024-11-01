@@ -454,7 +454,6 @@ body {
   color: white;
   border-radius: 0px 0px 35px 35px;
   background-color: #0033CC;
-  padding: 10px;
   text-align: center;
   justify-content: center;
   vertical-align: middle;
@@ -467,23 +466,38 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
     border-radius: 8px;
+    width: 100%;
     max-width: 300px;
     z-index: 1001;
+    float: inline-start;
     display: none; /* Ocultos por defecto */
+}
+.tour-step img{
+  width:70px;
+  position: absolute;
+  bottom:0px;
+  right: 2px;
 }
 
 .tour-step.active {
-    display: block; /* Muestra el paso activo */
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+     /* Muestra el paso activo */
 }
 
 .tour-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
+    margin: auto;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: none;
 }
@@ -525,16 +539,17 @@ body {
   <div class="tour-overlay"></div>
 
 <!-- Paso 1 del Tour -->
-<div id="tour-step-1" class="tour-step" style="top: 150px; left: 50px;">
+<div id="tour-step-1" class="tour-step">
   <h4>Bienvenido</h4>
   <p>Este es el slider principal de la aplicación. Puedes ver diferentes secciones aquí.</p>
+  <img src="img/X_mirando.png" alt="">
   <div class="tour-controls">
       <button class="tour-button" onclick="nextStep(2)">Siguiente</button>
   </div>
 </div>
 
 <!-- Paso 2 del Tour -->
-<div id="tour-step-2" class="tour-step" style="top: 450px; left: 50px;">
+<div id="tour-step-2" class="tour-step" style="top: 450px; ">
   <h4>Sección de Recursos</h4>
   <p>Aquí encontrarás las opciones disponibles que podras interactuar.</p>
   <div class="tour-controls">
@@ -544,7 +559,7 @@ body {
 </div>
 
 <!-- Paso 3 del Tour -->
-<div id="tour-step-3" class="tour-step" style="top: 500px; left: 50px;">
+<div id="tour-step-3" class="tour-step" style="top: 500px;">
   <h4>Futuras Actualizaciones</h4>
   <p>Esta aplicación estará en constantes cambios y mejoras!</p>
   <div class="tour-controls">
@@ -577,7 +592,7 @@ body {
         </div>
        
        <div>
-          <a href="#"><img src="img/ERlogo.png" alt="img3"></a>
+          <a href="#"><img src="img/protecto3.png" alt="img3"></a>
                <span>
               <!--<h3></h3>
               <h5></h5>-->
@@ -585,7 +600,7 @@ body {
         </div>
        
        <div>
-           <a href="#"><img src="img/ERlogo.png" alt="img4"></a>
+           <a href="#"><img src="img/protecto4.png" alt="img4"></a>
                <span>
               <!--<h3></h3>
               <h5></h5>-->
