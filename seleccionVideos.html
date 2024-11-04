@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECCION DE CICLO</title>
+    
+    <style>
+      body {
+        background: #0575E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0026b0, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0026b0, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      /* Contenedor de Ciclos */
+      .contenedorCiclo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 20px 0;
+      }
+      .contenedorCiclo a{
+        text-decoration: none;
+      }
+
+      .contenido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 7px;
+        width: 130px;
+        height: 130px;
+        border: 3px solid #fff;
+        background-color: #0058ef;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .contenido:hover {
+        transform: scale(1.05);
+      }
+
+      .contenido img {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 10px;
+      }
+
+      .contenido h4 {
+        font-size: 12px;
+        margin: 5px 0;
+        padding: 5px;
+        font-weight: 900;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        color: #fff;
+      }
+
+      .contenido p {
+        margin: 0;
+        color: #cfcfcf;
+        font-size: 10px;
+      }
+
+      /* Imagen principal */
+      .imgcontenido {
+        display: flex;
+        justify-content: center;
+      }
+
+      .imgcontenido img {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+      }
+      
+      a.back-button {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 50px;
+      }
+
+      a.back-button img {
+        width: 50px;
+      }
+      .indicador{
+        margin: 0;
+        font-weight: 900;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  color: rgb(255, 213, 0);
+  border-radius: 0px 0px 25px 25px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-shadow: #2a2a2a 0px 0px 4px;
+}
+    </style>
+</head>
+
+<body>
+
+  <!-- Botón de retroceso -->
+  <a class="back-button" href="index.html">
+    <img src="img/flechaiz.png" alt="Back">
+  </a>
+
+  <!-- Imagen principal -->
+  <div class="indicador">
+    <h2>VIDEOS PRÁCTICOS</h2>
+  </div>
+  <!-- Contenido central -->
+  <div class="imgcontenido">
+    <img src="img/videosssss-unscreen.gif" alt="Icono principal">
+  </div>
+
+  <!-- Selección de ciclos -->
+  <div class="contenedorCiclo">
+    <a href="go:">
+      <div class="contenido">
+        <img src="img/gatofeli.png" alt="I Ciclo">
+        <h4>I CICLO</h4>
+      </div>
+    </a>
+    <a href="go:">
+      <div class="contenido">
+        <img src="img/gatocool2.png" alt="II Ciclo">
+        <h4>II CICLO</h4>
+      </div>
+    </a>
+    <a href="videos3er.html">
+      <div class="contenido">
+        <img src="img/gatotrauma.png" alt="III Ciclo">
+        <h4>III CICLO</h4>
+      </div>
+    </a>
+    <a href="go:PX001">
+      <div class="contenido">
+        <img src="img/gatonerd.png" alt="IV Ciclo">
+        <h4>IV CICLO</h4>
+        <p>próximamente</p>
+      </div>
+    </a>
+    <a href="go:PX001">
+      <div class="contenido">
+        <img src="img/gatonervioso.png" alt="V Ciclo">
+        <h4>V CICLO</h4>
+        <p>próximamente</p>
+      </div>
+    </a>
+    <a href="go:PX001">
+      <div class="contenido">
+        <img src="img/gatoexplosion.png" alt="VI Ciclo">
+        <h4>VI CICLO</h4>
+        <p>próximamente</p>
+      </div>
+    </a>
+    <a href="go:PX001">
+      <div class="contenido">
+        <img src="img/gatotite.png" alt="VII Ciclo">
+        <h4>VII CICLO</h4>
+        <p>próximamente</p>
+      </div>
+    </a>
+    <a href="go:PX001">
+      <div class="contenido">
+        <img src="img/gatohappy.png" alt="VIII Ciclo">
+        <h4>VIII CICLO</h4>
+        <p>próximamente</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <div style="width: 100%;" w1-include-html="footer.html"></div>
+
+  <!-- Inclusión del footer -->
+  <script>
+    function includefooter() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w1-include-html");
+        if (file) {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+              if (this.status == 200) elmnt.innerHTML = this.responseText;
+              if (this.status == 404) elmnt.innerHTML = "Page not found.";
+              elmnt.removeAttribute("w1-include-html");
+              includefooter();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          return;
+        }
+      }
+    }
+    includefooter();
+  </script>
+
+</body>
+</html>
