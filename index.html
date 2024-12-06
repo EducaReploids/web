@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://i.ibb.co/3zngVXX/logoApp.png">
+  <title>MFEI EDUCAREPLOIDS</title>
+  <link rel="stylesheet" href="CSS/swiper-bundle-min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- slick javascript cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!--------FOOTER------->
+  <script>
+    function includefooter() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w1-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w1-include-html");
+              includefooter();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+  </script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div id="modal">
+    <div class="tutorial-container" id="tutorial">
+        <button class="close-button" onclick="closeModal()">X</button>
+        <h2 id="tutorial-title">Paso 1</h2>
+        <div class="tutorial-image" id="tutorial-image">
+            <img id="tutorial-img" src="" alt="Imagen del tutorial">
+        </div>
+        <p id="tutorial-text">Este es el primer paso del tutorial.</p>
+        <div class="controls">
+            <button onclick="prevStep()">Anterior</button>
+            <button onclick="nextStep()">Siguiente</button>
+        </div>
+    </div>
+</div>
+  <div class="indicador">
+    <h2>INICIO</h2>
+  </div>
+  <div class="projetos">
+
+    <h1>Anuncios</h1>
+
+    <section class="projetos-slider">
+
+      <div>
+        <a href="#"><img src="img/proyecto.png" alt="img1"></a>
+        <span>
+        </span>
+      </div>
+
+      <div>
+        <a href="#"><img src="img/proyecto2.png" alt="img2"></a>
+        <span>
+          <!--<h3></h3>
+              <h5></h5>-->
+        </span>
+      </div>
+
+      <div>
+        <a href="#"><img src="img/protecto3.png" alt="img3"></a>
+        <span>
+          <!--<h3></h3>
+              <h5></h5>-->
+        </span>
+      </div>
+
+      <div>
+        <a href="#"><img src="img/protecto4.png" alt="img4"></a>
+        <span>
+          <!--<h3></h3>
+              <h5></h5>-->
+        </span>
+      </div>
+
+    </section>
+
+  </div>
+  <!--SECCION POR CICLO-->
+  <!--
+  <img style="width: 250px;" src="img/recur.png" alt="">
+    <div class="wc-slide-containder">
+        <div class="wc-slider">
+            <a  href="">
+      
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatofeli.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">I CICLO</h4>
+            </div>
+            </a>
+            <a  href="">
+              
+                <div class="wc-slide-item">
+                  <img 
+                      src="img/gatocool2.png" loading="lazy" alt="Thumbnail"
+                  >
+                  <h4 class="cb-title">II CICLO</h4>
+                  <p class="cb description">
+                      
+                  </p>
+              </div>
+              
+            </a>
+            <a  href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatotrauma.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">III CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            
+            <a  href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatonerd.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">IV CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a  href="">
+              <div class="wc-slide-item">
+                <img
+                    src="img/gatonervioso.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">V CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a  href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatoexplosion.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">VI CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a  href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatotite.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">VII CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a  href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatohappy.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">VIII CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            <a  href="">
+              <div class="wc-slide-item">
+                <img 
+                    src="img/gatochamba.png" loading="lazy" alt="Thumbnail"
+                >
+                <h4 class="cb-title">IX CICLO</h4>
+                <p class="cb description">
+                    
+                </p>
+            </div>
+            </a>
+            
+        </div>
+    </div>
+  -->
+
+  <h1 style="font-size: 28px;
+    color: #ffffff;
+    padding-left: 4%;
+    font-weight: 900;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto; border-bottom: 3px solid rgb(255, 255, 255); width: 95%;">Recursos</h1>
+  <div class="izquierdabody">
+    <a href="seleccionCiclo.html">
+      <div class="contenido">
+        <div class="imgcontenido">
+          <img style="border-radius: 50px;" src="img/dgbiblio.gif" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">BIBLIOTECA VIRTUAL</p>
+          <p>¡Toda la teoria para estudiar! Busca los recursos en esta biblioteca almacenada en Google Drive.
+          </p> <br>
+          <span style="font-weight: 900; vertical-align: middle; ">Ver más<img
+              style="width: 25px; vertical-align: middle;" src="img/next.png" alt=""></span>
+        </div>
+      </div>
+    </a>
+    <a href="seleccionVideos.html">
+      <div class="contenido">
+        <div class="imgcontenido">
+          <img style="border-radius: 50px;" src="img/videosssss-unscreen.gif" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">VIDEO TUTORIALES</p>
+          <p>¡Aprende con tutoriales disponibles de distintos temas para tus cursos
+            de la universidad!
+          </p><br>
+          <span style="font-weight: 900; vertical-align: middle; ">Ver más<img
+              style="width: 25px; vertical-align: middle;" src="img/next.png" alt=""></span>
+
+        </div>
+      </div>
+    </a>
+    <a href="seleccionPractica.html">
+      <div class="contenido">
+        <div class="imgcontenido">
+          <img style="border-radius: 50px;" src="img/exam.gif" alt="">
+        </div>
+        <div class="textocontenido">
+          <p class="title">PRACTICA MFEI</p>
+          <p>¡Practica y Aprende con nuestros QUIZ de MATEMÁTICAS! <br> Domina los temas más complicados
+            para ti, con preguntas y solucionario incluido.
+          </p> <br>
+          <span style="font-weight: 900; vertical-align: middle; ">Ver más<img
+              style="width: 25px; vertical-align: middle;" src="img/next.png" alt=""></span>
+
+        </div>
+      </div>
+
+      <a href="">
+        <div class="contenido">
+          <div class="imgcontenido">
+            <img style="border-radius: 40px;" src="img/lectura.gif" alt="">
+          </div>
+          <div class="textocontenido">
+            <p class="title">APORTE A LA COMUNIDAD</p>
+            <p>¡Distintos aportes para todos los compañeros de la carrera! <br>
+              Accede a muchos de los documentos publicados por la comunidad de MFEI.
+            </p> <br>
+            <span style="font-weight: 900; vertical-align: middle; ">Ver más<img
+                style="width: 25px; vertical-align: middle;" src="img/next.png" alt=""></span>
+
+          </div>
+        </div>
+      </a>
+      <a href="go:PX001">
+        <div class="contenido">
+          <div class="imgcontenido">
+            <img style="border-radius: 40px;" src="img/alumno.gif" alt="">
+          </div>
+          <div class="textocontenido">
+            <p class="title">AYUDAME MFEI</p>
+            <p>¡Distintos compañeros de la carrera dispuestos a Ayudarte! <br>
+              Una lista de estudiantes de grados superiores que podran ayudarte
+              con tus trabajos por un precio accesible.
+            </p> <br>
+            <span style="font-weight: 900; vertical-align: middle; ">Ver más<img
+                style="width: 25px; vertical-align: middle;" src="img/next.png" alt=""></span>
+
+          </div>
+        </div>
+      </a>
+  </div>
+  <!--AQUI ESTA EL FOOTER-->
+  <div style="width: 100%;" w1-include-html="footer.html">
+
+  </div>
+
+  <!--INCLUSION DEL FOOTER-->
+  <script>
+    includefooter();
+  </script>
+<script>
+
+  const steps = [
+      {
+          title: "BIENVENIDO",
+          image: "https://i.ibb.co/NZH57DQ/app.png",
+          text: "En la app de MFEI encontrarás mucho material universitario, con fines de reforzar las asignaturas más complejas de la carrera."
+      },
+      {
+          title: "RECURSOS",
+          image: "https://i.ibb.co/CWhfz8x/videoapp.png",
+          text: "Podrás encontrar Documentos llenos de teoría, prácticas virtuales y videos educativos!"
+      },
+      {
+          title: "REGISTRATE",
+          image: "https://i.ibb.co/FKRBRzv/security.png",
+          text: "Por favor, para ingresar, deberás registrarte."
+      }
+  ];
+
+  let currentStep = 0;
+
+  // Comprobar si ya se ha visto el tutorial
+  if (!localStorage.getItem("tutorialCompleted")) {
+      setTimeout(showModal, 2000); // Mostrar modal después de 2 segundos si no se ha completado
+  }
+
+  function showModal() {
+      document.getElementById('modal').style.display = 'flex';
+      updateStep();
+  }
+
+  function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      completeTutorial(); // Marcar tutorial como completado
+  }
+
+  function updateStep() {
+      const title = document.getElementById("tutorial-title");
+      const img = document.getElementById("tutorial-img");
+      const text = document.getElementById("tutorial-text");
+
+      title.textContent = steps[currentStep].title;
+      img.src = steps[currentStep].image;
+      text.textContent = steps[currentStep].text;
+
+      const controls = document.querySelector('.controls');
+      if (currentStep === steps.length - 1) {
+          controls.innerHTML = `
+              <button onclick="prevStep()">Anterior</button>
+              <button onclick="register()">Registrarse</button>
+          `;
+      } else {
+          controls.innerHTML = `
+              <button onclick="prevStep()">Anterior</button>
+              <button onclick="nextStep()">Siguiente</button>
+          `;
+      }
+  }
+
+  function nextStep() {
+      if (currentStep < steps.length - 1) {
+          currentStep++;
+          updateStep();
+      } else {
+          completeTutorial(); 
+      }
+  }
+
+  function prevStep() {
+      if (currentStep > 0) {
+          currentStep--;
+          updateStep();
+      }
+  }
+
+  function completeTutorial() {
+      localStorage.setItem("tutorialCompleted", "true");
+  }
+
+  function register() {
+      closeModal(); // Cerrar modal
+      window.location.href = "http://action_profile"; // Redirigir a la página de registro
+  }
+</script>
+
+  <!-- === Script === -->
+  <script>
+    $(document).ready(function () {
+      $('.projetos-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        dots: true,
+        adaptiveHeight: true,
+
+
+        // slider responsivo 
+        responsive: [
+          {
+            breakpoint: 1121,
+            settings: {
+              slidesToShow: 2,
+              autoplay: true,
+              adaptiveHeight: true,
+            }
+          },
+
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 1,
+              autoplay: true,
+              adaptiveHeight: true,
+            }
+          }
+        ]
+
+      });
+
+    });
+  </script>
+</body>
+
+</html>
