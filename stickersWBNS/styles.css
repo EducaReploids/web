@@ -1,0 +1,148 @@
+/* Archivo: styles.css */
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Cabecera */
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #3700b3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #6200ea;
+}
+
+.menu {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Contenido principal */
+main {
+    padding: 10px;
+}
+
+#stickers .slider {
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider h2 {
+    margin: 0 0 10px;
+}
+
+.slider-content {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.slider-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.slider .download{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9b71c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.slider p{
+    font-size: 12px;
+    margin: 5px auto;
+}
+
+.slider .download:hover {
+    background-color: #018786;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 20px;
+    background-color: #3700b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #bb86fc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .slider-content img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .search-bar input {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
