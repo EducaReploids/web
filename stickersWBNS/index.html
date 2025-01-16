@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickers para WhatsApp</title>
+    <!-- Enlace al archivo de estilos externos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Cabecera principal de la página -->
+    <header>
+        <div class="header-container">
+            <!-- Título principal de la aplicación -->
+            <h1>Stickers para WhatsApp</h1>
+            <!-- Barra de búsqueda para filtrar stickers por youtuber -->
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Buscar">
+                <!-- Botón que activa la función de búsqueda -->
+                <button onclick="searchStickers()">🔍</button>
+            </div>
+            <!-- Botón de menú hamburguesa -->
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <!-- Menú lateral -->
+    <div class="sidebar" id="sidebar">
+        <h2>Streamers</h2>
+        <ul>
+            <li>
+                Aquino
+                <ul class="submenu">
+                    <li><a href="https://www.youtube.com/@AQUISI_" target="_blank"><img src="img/redes/yt-icon.png" alt="YouTube">
+                            YouTube</a></li>
+                    <li><a href="kick.com/aquino" target="_blank"><img src="img/redes/twitch.webp" alt="Twitch">
+                            Twitch</a></li>
+                    <li><a href="https://www.facebook.com/groups/aquinocommunity" target="_blank"><img src="img/redes/face.png" alt="TikTok">
+                            Facebook</a></li>
+                    <li><a href="instagram.com/aquinoby2002_" target="_blank"><img src="img/redes/insta.png" alt="Instagram">
+                            Instagram</a></li>
+                </ul>
+            </li>
+            <li>
+                Duxo
+                <ul class="submenu">
+                    <li><a href="https://www.youtube.com/@DUXO/featured" target="_blank"><img src="img/redes/yt-icon.png" alt="YouTube">
+                            YouTube</a></li>
+                    <li><a href="twitch.tv/duxorethey" target="_blank"><img src="img/redes/twitch.webp" alt="Twitch">
+                            Twitch</a></li>
+                    <li><a href="instagram.com/duxorethey" target="_blank"><img src="img/redes/insta.png" alt="Instagram">
+                            Instagram</a></li>
+                </ul>
+            </li>
+            <li>
+                Locochón
+                <ul class="submenu">
+                    <li><a href="https://www.youtube.com/@lLocochon" target="_blank"><img src="img/redes/yt-icon.png" alt="YouTube">
+                            YouTube</a></li>
+                    <li><a href="twitch.tv/llocochon" target="_blank"><img src="img/redes/twitch.webp" alt="Twitch">
+                            Twitch</a></li>
+                    <li><a href="instagram.com/locochoncin" target="_blank"><img src="img/redes/insta.png" alt="Instagram">
+                            Instagram</a></li>
+                </ul>
+            </li>
+            <li>
+                Soaring
+                <ul class="submenu">
+                    <li><a href="https://www.youtube.com/@soarinngchu" target="_blank"><img src="img/redes/yt-icon.png" alt="YouTube">
+                            YouTube</a></li>
+                    <li><a href="twitch.tv/soarinng" target="_blank"><img src="img/redes/twitch.webp" alt="Twitch">
+                            Twitch</a></li>
+                    <li><a href="instagram.com/soarinngg/?hl=es-la" target="_blank"><img src="img/redes/insta.png" alt="Instagram">
+                            Instagram</a></li>
+                </ul>
+            </li>
+            <li>
+                Proximamente...
+                
+            </li>
+        </ul>
+    </div>
+
+        </div>
+    </header>
+    
+
+    <!-- Contenido principal de la página -->
+    <main>
+        <section id="stickers">
+            <!-- Slider de stickers de Aquino -->
+            <div class="slider" id="aquino">
+                <h2>Aquino</h2>
+                <p>+15 stickers</p>
+                <div class="slider-content">
+                    <!-- Imágenes representativas de los stickers -->
+                    <img src="img/cool.jpg" alt="Sticker Aquino 1">
+                    <img src="img/noveoxd.webp" alt="Sticker Aquino 2">
+                    <img src="img/olatonotos.jpg" alt="Sticker Aquino 3">
+                    <img src="img/pac.webp" alt="Sticker Aquino 1">
+                    <img src="img/si.jpg" alt="Sticker Aquino 2">
+                    <img src="img/ñiñiñiñi.jpg" alt="Sticker Aquino 3">
+                </div><br>
+                <!-- Botón para Añadir el paquete de stickers de Aquino -->
+                <a class="download" href="go:AQU00">Añadir</a>
+            </div>
+
+            <!-- Slider de stickers de Duxo -->
+            <div class="slider" id="duxo">
+                <h2>Duxo</h2>
+                <p>+10 stickers</p>
+                <div class="slider-content">
+                    <img src="img/duxo/duxotamare.jpg" alt="Sticker Duxo 1">
+                    <img src="img/duxo/duñiño.jpg" alt="Sticker Duxo 2">
+                    <img src="img/duxo/que.jpg" alt="Sticker Duxo 3">
+                    <img src="img/duxo/gatito.jpg" alt="Sticker Duxo 1">
+                    <img src="img/duxo/si.jpg" alt="Sticker Duxo 2">
+                    <img src="img/duxo/ñejeñeje.jpg" alt="Sticker Duxo 3">
+                </div> <br>
+                <a class="download" href="DUX00">Añadir</a>
+            </div>
+
+            <!-- Slider de stickers de Locochón -->
+            <div class="slider" id="locochon">
+                <h2>Locochón</h2>
+                <p>+12 stickers</p>
+                <div class="slider-content">
+                    <img src="img/loco/carita.jpg" alt="Sticker Locochón 1">
+                    <img src="img/loco/loco.jpg" alt="Sticker Locochón 2">
+                    <img src="img/loco/mandarina.jpg" alt="Sticker Locochón 3">
+                    <img src="img/loco/quebonito.jpg" alt="Sticker Locochón 1">
+                    <img src="img/loco/HOLAA.webp" alt="Sticker Locochón 2">
+                    <img src="img/loco/JAJAJA.webp" alt="Sticker Locochón 3">
+                </div> <br>
+                <a class="download" href="go:LOC00">Añadir</a>
+            </div>
+
+            <!-- Slider de stickers de Soaring -->
+            <div class="slider" id="soaring">
+                <h2>Soaring</h2>
+                <p>+12 stickers</p>
+                <div class="slider-content">
+                    <img src="img/soaring/mareado.jpg" alt="Sticker Soaring 1">
+                    <img src="img/soaring/sies.jpg" alt="Sticker Soaring 2">
+                    <img src="img/soaring/pacmansoaring.jpg" alt="Sticker Soaring 3">
+                    <img src="img/soaring/uwu.jpg" alt="Sticker Soaring 1">
+                    <img src="img/soaring/soaring.jpg" alt="Sticker Soaring 2">
+                    <img src="img/soaring/xd.jpg" alt="Sticker Soaring 3">
+                </div> <br>
+                <a class="download" href="go:SOA00">Añadir</a>
+            </div>
+            <!-- Slider de stickers de MICHU -->
+            <div class="slider" id="michu">
+                <h2>Michu</h2>
+                <p>proximamente...</p>
+                <div class="slider-content">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 1">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 2">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 3">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 1">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 2">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 3">
+                </div> <br>
+                <a class="download" href="#">Proximamente</a>
+            </div>
+            <!-- Slider de stickers de MICTIA -->
+            <div class="slider" id="mictia">
+                <h2>Mictia</h2>
+                <p>proximamente...</p>
+                <div class="slider-content">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 1">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 2">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 3">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 1">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 2">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 3">
+                </div> <br>
+                <a class="download" href="#">Proximamente</a>
+            </div>
+            <!-- Slider de stickers de NATALAN -->
+            <div class="slider" id="natalan">
+                <h2>Natalan</h2>
+                <p>proximamente...</p>
+                <div class="slider-content">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 1">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 2">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 3">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 1">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 2">
+                    <img src="img/nodisponible.webp" alt="Sticker Soaring 3">
+                </div> <br>
+                <a class="download" href="#">Proximamente</a>
+            </div>
+            <!-- Slider de stickers de RANDOM -->
+            <div class="slider" id="random">
+                <h2>Random</h2>
+                <p>+10 stickers</p>
+                <div class="slider-content">
+                    <img src="img/random/lapinga.jpg" alt="Sticker Soaring 1">
+                    <img src="img/random/nosabandono.jpg" alt="Sticker Soaring 2">
+                    <img src="img/random/papeada.jpg" alt="Sticker Soaring 3">
+                    <img src="img/random/sad.jpg" alt="Sticker Soaring 1">
+                    <img src="img/random/simp1.jpg" alt="Sticker Soaring 2">
+                    <img src="img/random/webo.jpg" alt="Sticker Soaring 3">
+                </div> <br>
+                <a class="download" href="RAN00">Añadir</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Pie de página con enlaces de navegación -->
+    <footer>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#search">Buscar</a>
+            <a href="politica.html">Política de Privacidad</a>
+        </nav>
+    </footer>
+
+    <!-- Enlace al archivo de JavaScript externo -->
+    <script src="script.js"></script>
+    <script>
+        // Alternar la visibilidad del menú lateral
+function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+}
+
+// Cerrar el menú si se hace clic fuera de él
+document.addEventListener('click', (event) => {
+    const sidebar = document.getElementById('sidebar');
+    const menuButton = document.querySelector('.menu');
+    const isClickInsideMenu = sidebar.contains(event.target);
+    const isClickOnMenuButton = menuButton.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnMenuButton) {
+        sidebar.classList.remove('open');
+    }
+});
+
+// Mostrar/ocultar submenús al hacer clic en un streamer
+document.querySelectorAll('.sidebar ul > li').forEach(item => {
+    item.addEventListener('click', () => {
+        const submenu = item.querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});
+
+
+    </script>
+</body>
+
+</html>

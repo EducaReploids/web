@@ -1,0 +1,263 @@
+/* Archivo: styles.css */
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Cabecera */
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #3700b3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #6200ea;
+}
+
+/* Botón menú hamburguesa */
+.menu {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    top: 15px;
+    left: 15px;
+    z-index: 100;
+}
+
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, #1e1e2f, #3b3b4f);
+    color: white;
+    transition: 0.3s;
+    padding: 20px;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #ffd700;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.sidebar ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+.sidebar ul .submenu {
+    list-style-type: none;
+    padding-left: 20px;
+    display: none;
+    margin-top: 10px;
+}
+
+.sidebar ul .submenu li {
+    margin: 10px 0;
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.sidebar ul .submenu li:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+.sidebar ul .submenu li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul .submenu li a:hover {
+    color: #ffd700;
+}
+
+.sidebar ul .submenu li img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de apertura */
+.sidebar.open {
+    left: 0;
+}
+/* Scroll personalizado */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #ffc107;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px;
+    }
+}
+
+/* Contenido principal */
+main {
+    padding: 10px;
+}
+
+#stickers .slider {
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider h2 {
+    margin: 0 0 10px;
+}
+
+.slider-content {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.slider-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.slider .download{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9b71c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.slider p{
+    font-size: 12px;
+    margin: 5px auto;
+}
+
+.slider .download:hover {
+    background-color: #018786;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 20px;
+    background-color: #3700b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #bb86fc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .slider-content img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .search-bar input {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
