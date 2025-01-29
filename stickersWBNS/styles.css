@@ -69,7 +69,7 @@ h1 {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -300px;
+    left: -400px;
     width: 300px;
     height: 100%;
     background: linear-gradient(135deg, #1e1e2f, #3b3b4f);
