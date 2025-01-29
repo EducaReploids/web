@@ -261,3 +261,154 @@ footer a:hover {
         font-size: 20px;
     }
 }
+
+
+#sticker-maker {
+    padding: 20px;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.maker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#sticker-canvas {
+    max-width: 100%;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+}
+
+.text-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #3700b3;
+}
+
+
+.upload-label,
+.text-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#upload-image,
+#sticker-text {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 10px;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales */
+#game-slider {
+    text-align: right;
+    padding: 10px;
+    background: #262626; /* Fondo oscuro */
+    color: white;
+    vertical-align: middle;
+
+}
+
+#game-slider h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#game-slider a{
+    text-decoration: none;
+    color: white;
+
+}
+
+/* Contenedor del slider */
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    padding: 10px;
+}
+
+/* Slider */
+.slider2 {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Estilos para cada juego */
+.game-card {
+    min-width: 200px;
+    flex: 0 0 auto;
+    background: #2c2c2c;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    scroll-snap-align: start;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover {
+    transform: scale(1.04);
+}
+
+.game-card img {
+    width: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 1rem;
+    font-weight: bold;
+}
