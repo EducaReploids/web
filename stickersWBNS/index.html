@@ -98,9 +98,10 @@
         </div>
     </header>
 
+
     <section id="game-slider">
         <h2>Juegos Disponibles</h2>
-    <!--<a href="go:JUE00">Ver más <img style="width: 15px;" src="img/next.png" alt=""></a> 
+        <!--<a href="go:JUE00">Ver más <img style="width: 15px;" src="img/next.png" alt=""></a> 
         -->
         <div class="slider-container">
             <div class="slider2">
@@ -266,8 +267,44 @@
         </nav>
     </footer>
 
+    <div id="inicioModal" class="modal">
+        <div class="modal-content" id="modalBox">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <img src="img/modalimg.png" alt="Bienvenido" class="modal-img">
+            <a href="#stickers" class="modal-link">Descargar</a>
+        </div>
+    </div>
+
     <!-- Enlace al archivo de JavaScript externo -->
     <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+            const modal = document.getElementById("inicioModal");
+            const closeBtn = document.getElementById("closeModal");
+            const modalBox = document.getElementById("modalBox");
+
+            // Mostrar solo si no se ha cerrado antes
+            if (!localStorage.getItem("modalShown")) {
+                modal.style.display = "flex";
+            }
+
+            // Cerrar con la X
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+                localStorage.setItem("modalShown", "true");
+            };
+
+            // Cerrar al hacer clic fuera del contenido del modal
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    localStorage.setItem("modalShown", "true");
+                }
+            };
+        };
+    </script>
+
+
     <script>
         // Alternar la visibilidad del menú lateral
         function toggleMenu() {
